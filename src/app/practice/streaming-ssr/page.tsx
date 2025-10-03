@@ -1,12 +1,14 @@
 import DelayServerDataFetch from "@/components/DelayServerDataFetch";
 import { Box } from "@mui/material";
-import React from "react";
+import React, { Suspense } from "react";
 
 const StreamingSsrPage = () => {
   return (
     <Box>
       <h1>Streaming SSR Page</h1>
-      <DelayServerDataFetch />
+      <Suspense fallback={<div>Loading...</div>}>
+        <DelayServerDataFetch />
+      </Suspense>
     </Box>
   );
 };
